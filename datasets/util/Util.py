@@ -12,8 +12,10 @@ from datasets import DataKeys
 
 
 def username():
-  return os.environ["USER"]
-
+  try:
+    return os.environ["USER"]
+  except:
+    return 'user'
 
 def get_filename_without_extension(path):
   file_name = path.split("/")[-1]
